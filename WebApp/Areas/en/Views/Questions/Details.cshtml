@@ -1,0 +1,59 @@
+﻿@model WebApp.Models.Question
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Question</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Asked_By)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asked_By)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Selected_Answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Selected_Answer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DTS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Question_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

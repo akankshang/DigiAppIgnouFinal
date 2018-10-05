@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApp.Models.Article>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section id="hero_in" class="courses">
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="fadeInUp"><span></span>Blog</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container margin_60_35">
+
+    @foreach (var item in Model)
+    {
+
+
+        <div class="box_list wow">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                    <figure class="block-reveal">
+                        <div class="block-horizzontal"></div>
+                        <a href="@Url.Action("Details", "Courses", new { id = item.Article_Id })"></a>
+                        <div class="preview"><span>Preview course</span></div>
+                    </figure>
+                </div>
+                <div class="col-lg-7">
+                    <div class="wrapper">
+                        @*<a href="#0" class="wish_bt"></a>*@
+
+                        <small>@Html.DisplayFor(modelItem => item.Author) | @Html.DisplayFor(modelItem => item.Published_On) </small>
+                        <h3> @Html.DisplayFor(modelItem => item.Title)</h3>
+                        <p> @Html.Raw(item.Body.Substring(0, Math.Min(item.Body.Length, 100))) </p>
+                        @*<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></div>*@
+                    </div>
+                    <ul>
+                        <li><i class="icon_like"></i> @Html.DisplayFor(modelItem => item.Likes)</li>
+                        <li>@Html.ActionLink("Read More", "Details", new { id = item.Article_Id })</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <!-- /box_list -->
+    }
+
+    <p class="text-center add_top_60"><a href="#0" class="btn_1">Load more</a></p>
+</div>
+<!-- /container -->

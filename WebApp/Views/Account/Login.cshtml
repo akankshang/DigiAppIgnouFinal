@@ -1,0 +1,95 @@
+﻿@using WebApp.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+<div id="preloader" style="display: none;">
+    <div data-loader="circle-side" style="display: none;"></div>
+</div><div id="login">
+    <aside>
+        <figure>
+            <a href="/Home"><img src="~/Content/img/logo.png" width="149" height="42" data-retina="true" alt=""></a>
+        </figure>
+        <form>
+            @*<div class="access_social">
+                <a href="#0" class="social_bt facebook">Login with Facebook</a>
+                <a href="#0" class="social_bt google">Login with Google</a>
+                <a href="#0" class="social_bt linkedin">Login with Linkedin</a>
+            </div>*@
+            @*<div class="divider"><span>Or</span></div>*@
+            <div class="form-group">
+                <span class="input">
+                    <input class="input_field" type="email" autocomplete="off" name="email">
+                    <label class="input_label">
+                        <span class="input__label-content">Your email</span>
+                    </label>
+                </span>
+
+                <span class="input">
+                    <input class="input_field" type="password" autocomplete="new-password" name="password">
+                    <label class="input_label">
+                        <span class="input__label-content">Your password</span>
+                    </label>
+                </span>
+                <small><a href="#0">Forgot password?</a></small>
+            </div>
+            <a href="#0" class="btn_1 rounded full-width add_top_60">Login to eLearning</a>
+            <div class="text-center add_top_10">New to eLearning? <strong><a href="/Account/Register">Sign up!</a></strong></div>
+        </form>
+        <div class="copy">© 2018 elearning</div>
+    </aside>
+</div>
+ 
+@*<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+                <p>
+                    @Html.ActionLink("Register as a new user", "Register")
+                </p>
+                 Enable this once you have account confirmation enabled for password reset functionality
+                    <p>
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                    </p> 
+            }
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>
+</div>*@

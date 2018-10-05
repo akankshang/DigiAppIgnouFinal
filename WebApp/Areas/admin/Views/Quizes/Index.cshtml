@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApp.Models.Quizes>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+ 
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quiz_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quiz_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Quiz_Group_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Quiz_Group_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Quiz_Group_Id })
+        </td>
+    </tr>
+}
+
+</table>

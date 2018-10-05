@@ -1,0 +1,107 @@
+﻿@model IEnumerable<WebApp.Models.User>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Last_Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Failed_Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Failed_Attempt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is_Locked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Locked_On)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is_Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DTS)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Last_Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Failed_Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Failed_Attempt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Is_Locked)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Locked_On)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Is_Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DTS)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Entity_Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Entity_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Entity_Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

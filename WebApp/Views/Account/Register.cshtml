@@ -1,0 +1,89 @@
+﻿@model WebApp.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<div id="mm-0" class="mm-page mm-slideout">
+    <div id="preloader" style="display: none;">
+        <div data-loader="circle-side" style="display: none;"></div>
+    </div><div id="login">
+        <aside>
+            <figure>
+                <a href="/Home"><img src="~/Content/img/logo.png" width="149" height="42" data-retina="true" alt=""></a>
+            </figure>
+           @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+           {   @Html.AntiForgeryToken()
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="form-group">
+
+                    
+
+                  
+
+                    <span class="input">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "input_field" })
+                        <label class="input_label">
+                            <span class="input__label-content">Your Email</span>
+                        </label>
+                    </span>
+
+                    <span class="input">
+                        @Html.PasswordFor(m => m.Password, new { @class = "input_field" })
+                        <label class="input_label">
+                            <span class="input__label-content">Your password</span>
+                        </label>
+                    </span>
+
+                    <span class="input">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "input_field" })
+                        
+                        <label class="input_label">
+                            <span class="input__label-content">Confirm password</span>
+                        </label>
+                    </span>
+
+                    <div id="pass-info" class="clearfix"></div>
+                </div>
+                <input type="submit"  class="btn_1 rounded full-width add_top_30" value="Register to eLearning" />
+                <div class="text-center add_top_10">Already have an acccount? <strong><a href="/Account/login">Sign In</a></strong></div>
+           }
+            <div class="copy">© 2018 eLearning</div>
+        </aside>
+    </div>
+</div>
+
+@*<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+}*@
+
+ 

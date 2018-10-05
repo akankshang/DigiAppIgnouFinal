@@ -1,0 +1,117 @@
+﻿@model IEnumerable<WebApp.Models.Question>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .question-summary {
+        padding: 12px 0 10px 0;
+        border-bottom: 1px solid #e4e6e8;
+    }
+
+    .question-summary {
+        overflow: hidden;
+        padding: 15px 0;
+        border-bottom: 1px solid #eff0f1;
+    }
+
+    #questions {
+        margin-bottom: 20px;
+    }
+
+    #questions, #answers {
+        clear: both;
+        width: 728px;
+    }
+
+    .statscontainer {
+        width: 78px;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+    .summary {
+        float: left;
+        width: 630px;
+    }
+
+        .summary h3 {
+            font-size: 15px;
+            line-height: 1.4;
+            margin-bottom: .5em;
+        }
+
+    .started {
+        width: 200px;
+        float: right;
+        line-height: 18px;
+    }
+
+    .float-right, .fr {
+        float: right !important;
+    }
+</style>
+<section class="header-section">
+    <div class="wrapper">
+
+
+    </div>
+</section>
+<br />
+<br />
+<div class="container">
+    <p>
+        @Html.ActionLink("Ask Question", "Ask", null, new { @class = "btn btn-success" })
+    </p>
+    <div id="questions">
+
+
+        @foreach (var item in Model)
+            {
+            <div class="question-summary">
+                @*<div class="statscontainer">
+                        <div class="statsarrow"></div>
+                        <div class="stats">
+                            <div class="vote">
+                                <div class="votes">
+                                    <span class="vote-count-post high-scored-post"><strong>20859</strong></span>
+                                    <div class="viewcount">votes</div>
+                                </div>
+                            </div>
+                            <div class="status answered-accepted">
+                                <strong>21</strong>answers
+                            </div>
+                        </div>
+                        <div class="views supernova" title="1,177,281 views">
+                            1.2m views
+                        </div>
+                    </div>*@
+                <div class="summary">
+                    <h3><a href="/questions/11227809/why-is-it-faster-to-process-a-sorted-array-than-an-unsorted-array" class="question-hyperlink">@Html.DisplayFor(modelItem => item.Title)</a></h3>
+                    <div class="excerpt">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </div>
+                    @*<div class="tags t-java t-cçç t-performance t-optimization t-branch-prediction">
+                            <a href="/questions/tagged/java" class="post-tag" title="show questions tagged 'java'" rel="tag">java</a> <a href="/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a> <a href="/questions/tagged/performance" class="post-tag" title="show questions tagged 'performance'" rel="tag">performance</a> <a href="/questions/tagged/optimization" class="post-tag" title="show questions tagged 'optimization'" rel="tag">optimization</a> <a href="/questions/tagged/branch-prediction" class="post-tag" title="show questions tagged 'branch-prediction'" rel="tag">branch-prediction</a>
+                        </div>*@
+                    <div class="started fr">
+                        <div class="user-info user-hover">
+                            <div class="user-action-time">
+                                asked <span title="@Html.DisplayFor(modelItem => item.DTS)" class="relativetime">@Html.DisplayFor(modelItem => item.DTS)</span>
+                            </div>
+
+                            <div class="user-details">
+                                <a href="#">@Html.DisplayFor(modelItem => item.Asked_By)</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+
+</div>

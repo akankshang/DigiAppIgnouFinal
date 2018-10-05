@@ -1,0 +1,30 @@
+﻿@model WebApp.Models.Quizes
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="hero_in" style="height:280px" class="courses">
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="fadeInUp"><span></span>Quiz: @Html.DisplayFor(model => model.Quiz_Name)</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container margin_60_35">
+   
+        <div class="row">
+            <h5>Description:</h5>
+        </div>
+        <div class="row">
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
+        <div class="row">
+            @Html.ActionLink("Start", "Start", new { id = Model.Quiz_Group_Id }, new { @class="btn btn-success" })
+        </div>
+      
+     
+
+</div>

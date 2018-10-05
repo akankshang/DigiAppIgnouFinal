@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApp.Models.Chapter>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+ 
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Course_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chapter_Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Schedule)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DTS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chapter_Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Schedule)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DTS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Chapter_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Chapter_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Chapter_Id })
+        </td>
+    </tr>
+}
+
+</table>

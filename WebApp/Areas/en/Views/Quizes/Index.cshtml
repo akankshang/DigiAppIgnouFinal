@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApp.Models.Quizes>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="hero_in" style="height:280px" class="courses">
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="fadeInUp"><span></span>Check your progress</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container margin_60_35">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="box_grid wow animated" style="visibility: visible;">
+
+                    <div class="wrapper">
+
+                        <h3>@Html.DisplayNameFor(model => model.Quiz_Name)</h3>
+                        <p>@Html.DisplayNameFor(model => model.Description)</p>
+                        <ul>
+
+                            <li>@Html.ActionLink("Enter", "Details", new { id = item.Quiz_Group_Id })</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <!-- /box_grid -->
+            </div>
+        }
+    </div>
+
+</div>
+

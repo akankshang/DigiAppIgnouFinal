@@ -1,0 +1,66 @@
+﻿@model WebApp.Models.Chapter
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+ 
+<div>
+    <h4>Chapter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Course_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chapter_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chapter_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Schedule)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Schedule)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DTS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Chapter_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
